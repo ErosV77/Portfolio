@@ -1,0 +1,136 @@
+.fenix-regular {
+    font-family: "Fenix", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+.atkinson-hyperlegible-regular {
+    font-family: "Atkinson Hyperlegible", sans-serif;
+}
+
+.dancing-script {
+    font-family: "Dancing Script", cursive;
+  }
+
+
+nav {
+    font-family: 'Atkinson Hyperlegible';
+    display: flex;
+    align-items: center;
+    padding: 2% 5% 1% 5%;
+}
+
+nav a {
+    color: #000000;
+    text-decoration: none;
+    padding: 0 1%;
+    font-weight: 200;
+    font-size: 75%;
+}
+
+nav a:first-child {
+    margin-right: auto;
+    font-size: 150%;
+    font-weight: 900;
+    font-family: "Dancing Script";
+}
+
+nav a:hover {
+    color: #00b4d8;
+}
+
+body, html {
+    height: 100%;
+    margin: 0%;
+    font-family: 'Atkinson Hyperlegible';
+    font-weight: 200;
+    font-size: 125%;
+}
+
+/* Style de base pour le Swiper */
+.swiper {
+    width: 100%;
+    max-height: 90%;
+    overflow: hidden;
+}
+
+/* Style des diapositives du Swiper */
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    aspect-ratio: 16 / 9; /* Définit le ratio des slides */
+    width: 100%;
+    height: auto;
+    background-color: #fff;
+    overflow: hidden;
+}
+
+/* Style des images à l'intérieur des diapositives */
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Recouvre la zone tout en respectant le ratio */
+}
+
+/* Style pour la progression de l'autoplay */
+.autoplay-progress {
+    position: absolute;
+    right: 16px;
+    bottom: 16px;
+    z-index: 10;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: #ffffff00; /* Couleur du temps (invisible par défaut) */
+}
+
+/* Style pour le SVG qui montre la progression */
+.autoplay-progress svg {
+    --progress: 0;
+    position: absolute;
+    left: 0;
+    top: 0px;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    stroke-width: 4px;
+    stroke: #ffffff00; /* Couleur de chargement (invisible par défaut) */
+    fill: none;
+    stroke-dashoffset: calc(125.6px * (1 - var(--progress)));
+    stroke-dasharray: 125.6;
+    transform: rotate(-90deg);
+}
+
+/* Style des flèches de navigation */
+.swiper-button-next,
+.swiper-button-prev {
+    color: #fff; /* Couleur des flèches */
+}
+
+/* Style des bullets de pagination */
+.swiper-pagination-bullet {
+    background: #fff;
+    width: 2.5rem;
+    height: 0.2rem;
+    border-radius: 50px;
+    opacity: 0.75;
+    transition: opacity 0.3s ease; /* Transition fluide lors du hover */
+}
+
+/* Style au hover pour rendre les bullets plus visibles */
+.swiper-pagination-bullet:hover {
+    opacity: 1;
+}
+
+/* Style pour le bullet actif */
+.swiper-pagination-bullet-active {
+    background: #00b4d8; /* Couleur du bullet actif */
+    width: 2.5rem;
+    border-radius: 50px;
+    opacity: 1;
+}
