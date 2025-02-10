@@ -2,23 +2,27 @@ document.addEventListener('DOMContentLoaded', function () {
     fetch('nav.html')
         .then(response => response.text())
         .then(data => {
-            document.getElementById('nav-placeholder').innerHTML = data;
+            document.getElementById('nav-placeholder').innerHTML = data; // Load navigation HTML
         });
+
+    // Disable right-click on images
+    document.querySelectorAll('img').forEach(img => {
+        img.addEventListener('contextmenu', function (e) {
+            e.preventDefault();
+        });
+    });
 });
 
-// Fonction pour appliquer des styles CSS aux images dans les slides
+// Function to apply CSS styles to images in slides
 function applyImageStyles() {
     const images = document.querySelectorAll('.swiper-slide img');
     
     images.forEach(img => {
-        img.style.userSelect = 'none'; // Empêche la sélection de l'image
-        img.style.webkitUserSelect = 'none'; // Pour les navigateurs WebKit
-        img.style.mozUserSelect = 'none'; // Pour Firefox
-        img.style.msUserSelect = 'none'; // Pour Internet Explorer/Edge
+        img.style.userSelect = 'none'; // Prevent image selection
     });
 }
 
-// Initialiser Swiper
+// Initialize Swiper
 document.addEventListener('DOMContentLoaded', () => {
     const progressCircle = document.querySelector(".autoplay-progress svg");
     const progressContent = document.querySelector(".autoplay-progress span");
@@ -45,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 progressContent.textContent = `${Math.ceil(time / 1000)}s`;
             },
             init() {
-                applyImageStyles(); // Appliquer les styles aux images après l'initialisation de Swiper
+                applyImageStyles(); // Apply styles to images after Swiper initialization
             }
         }
     });
